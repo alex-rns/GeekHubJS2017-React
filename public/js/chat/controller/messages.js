@@ -6,9 +6,10 @@ function messagesController() {
         }
     });
 
-    messagesFormView('#message-input', {
+    var form = newMessageFormView('#new-message-form', {
         onSend: function (text) {
             messages.add({text: text});
+            form.clear();
         }
     });
 }

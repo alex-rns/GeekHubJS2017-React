@@ -1,4 +1,4 @@
-function messagesFormView(selector, callbacks) {
+function newMessageFormView(selector, callbacks) {
     var form = $(selector);
     var textInput = form.find('[name=text]');
 
@@ -10,7 +10,11 @@ function messagesFormView(selector, callbacks) {
         if(!text) return;
 
         callbacks.onSend(text);
+    });
+        return {
+            clear: function () {
+                textInput.val('');
+        }
 
-        textInput.val('');
-    })
+    };
 }
